@@ -18,19 +18,19 @@ public class TblCliente implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idcliente;
 
+	private String nombre;
+	
 	private String apellido;
 
 	private String dni;
 
 	private String email;
 
-	private String nacionalidad;
-
-	private String nombre;
-
-	private String sexo;
-
 	private String telf;
+	
+	private String sexo;
+	
+	private String nacionalidad;
 
 	public TblCliente() {
 	}
@@ -43,6 +43,14 @@ public class TblCliente implements Serializable {
 		this.idcliente = idcliente;
 	}
 
+	public String getNombre() {
+		return this.nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
 	public String getApellido() {
 		return this.apellido;
 	}
@@ -67,6 +75,22 @@ public class TblCliente implements Serializable {
 		this.email = email;
 	}
 
+	public String getTelf() {
+		return this.telf;
+	}
+
+	public void setTelf(String telf) {
+		this.telf = telf;
+	}
+	
+	public String getSexo() {
+		return this.sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	
 	public String getNacionalidad() {
 		return this.nacionalidad;
 	}
@@ -75,28 +99,6 @@ public class TblCliente implements Serializable {
 		this.nacionalidad = nacionalidad;
 	}
 
-	public String getNombre() {
-		return this.nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getSexo() {
-		return this.sexo;
-	}
-
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
-
-	public String getTelf() {
-		return this.telf;
-	}
-
-	public void setTelf(String telf) {
-		this.telf = telf;
-	}
+	
 
 }

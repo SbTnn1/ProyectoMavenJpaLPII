@@ -50,8 +50,20 @@ public class TblClienteImp implements ICliente{
 
 	@Override
 	public List<TblCliente> ListarCliente() {
-		// TODO Auto-generated method stub
-		return null;
+		//Establecemos la conexion con la unidad de persistencia
+		EntityManagerFactory fab = Persistence.createEntityManagerFactory("ProyectoMavenJpaLPII");
+		//Gestionamos las entidades
+		EntityManager em =fab.createEntityManager();
+		//Iniciamos la transaccion
+		em.getTransaction().begin();
+		//Recuperamos la data de la base de datos
+		List<TblCliente> listado = em.createQuery("select c from TblCliente c", TblCliente.class).getResultList();
+		//Confirmamos la transaccion
+		em.getTransaction().commit();
+		//Cerramos
+		em.close();
+		//Retornamos el listado
+		return listado;
 	}
 
 	
